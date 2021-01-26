@@ -47,7 +47,7 @@ io.on('connection', socket => {
   // Listen for chatMessage
   socket.on('chatMessage', msg => {
     const user = getCurrentUser(socket.id);
-
+  
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 
@@ -70,6 +70,6 @@ io.on('connection', socket => {
   });
 });
 
-const PORT = 3000;
+const PORT = 5000;
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
